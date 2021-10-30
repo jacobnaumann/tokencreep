@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>TokenCreep Beta - All-in-One NFT Search Engine</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon" href="img/favicon2.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <!-- <link rel="stylesheet" href="css/hero-slider.css"> -->
+        <link rel="stylesheet" href="css/templatemo-main.css">
+        <!-- <link rel="stylesheet" href="css/owl-carousel.css"> -->
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <!-- <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script> -->
+        <script src="js/web3.min.js"></script>
+        <script src="js/first.js"></script>
+        <script src="js/fetch.js"></script> 
+    </head>
+<!--
+Vanilla Template
+https://templatemo.com/tm-526-vanilla
+-->
+<body>
+
+    <!-- <div class="fixed-side-navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link" href="#search"><span>Search</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#about"><span>About</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-us"><span>Contact Us</span></a></li>
+        </ul>
+    </div> -->
+
+    <div class="parallax-content baner-content" id="search">
+        <div class="container">
+            <div class="first-content">
+                <h1>TokenCreep</h1>
+                <span id="nftSearch"><em>NFT</em> Search Engine</span>
+                <div id="searchBar">
+                    <input name="name" type="text" id="address" size="30" value="0x96e8eed3f44bd5b051d4423b4cf1a22e6cdab02a" required> <!-- onfocus="this.value=''" -->
+                    <button id="fetch-button" onclick="fetchinfo()">Search</button>
+                </div>
+                <div id="infoBox">
+                            
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="service-content" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left-text">
+                        <h4>More About Vanilla</h4>
+                        <div class="line-dec"></div>
+                        <p>Vanilla is free HTML CSS template with Bootstrap v4.2.1 and you can apply this theme for your sites. 
+                        Please share our <a rel="nofollow" href="https://templatemo.com">website</a> to your friends or collegues. Thank you.</p>
+                        <ul>
+                            <li>-  Praesent porta urna id eros</li>
+                            <li>-  Curabitur consectetur malesuada</li>
+                            <li>-  Nam pretium imperdiet enim</li>
+                            <li>-  Sed viverra arcu non nisi efficitur</li>
+                        </ul>
+                        <div class="primary-button">
+                            <a href="#contact-us">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Classic Modern Design</h4>
+                                <div class="line-dec"></div>
+                                <p>Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Unique &amp; Creative Ideas</h4>
+                                <div class="line-dec"></div>
+                                <p>Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Effective Team Work</h4>
+                                <div class="line-dec"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="service-item">
+                                <h4>Fast Support 24/7</h4>
+                                <div class="line-dec"></div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="parallax-content contact-content" id="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <div class="row">
+                            <form id="contact" action="" method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <input name="email" type="email" class="form-control" id="email" placeholder="Your email..." required="">
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                                      </fieldset>
+                                    </div>
+                                    <div class="col-md-12">
+                                      <fieldset>
+                                        <button type="submit" id="form-submit" class="btn">Send Message</button>
+                                      </fieldset>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="col-md-6">
+                    <div class="map">
+                    How to change your own map point
+                           1. Go to Google Maps
+                           2. Click on your location point
+                           3. Click "Share" and choose "Embed map" tab
+                           4. Copy only URL and paste it within the src="" field below
+                   
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>-->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <div class="primary-button">
+                        <a href="#search">Back To Top</a>
+                    </div> -->
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google"></i></a></li>
+                        <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    </ul>
+                    <p>Copyright &copy; 2021 TokenCreep 
+            
+            		- Design: <a rel="nofollow noopener" href="https://TokenCreep.com"><em>TokenCreep</em></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script> -->
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+
+
+</body>
+</html>
