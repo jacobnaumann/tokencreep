@@ -170,7 +170,7 @@ a:hover { color: #FF0; }
   overflow: hidden;
   height: auto;
   background-color: black;  
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   margin-top: 30px;
 }
 .first-content #infoBox h6 {
@@ -187,16 +187,55 @@ a:hover { color: #FF0; }
 }
 .first-content #infoBox #entry {
   background-color: black;  
-  border: 2px solid #fff;
-  /* margin-top: 30px; */
-  padding: 25px 5px 25px 5px;
+  border: 2px solid rgb(0, 255, 76);
+  margin-top: 30px;
+  padding: 25px 5px 0px 5px;
   text-align: left;
-  height: 120px;
+  height: auto;
   font-size: 17px;
+  border-radius: 5px
+}
+.first-content #infoBox #entry #entry-basics #entry-image img {
+  
+}
+.first-content #infoBox #entry #entry-basics #entry-image img {
+  border: 2px solid #b026ff;
+  border-radius: 5px;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+.first-content #infoBox #entry #entry-basics #entry-details {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+  color: white;
+  vertical-align: top;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.first-content #infoBox #entry #entry-basics #entry-details #entry-name a {
+  color: #b026ff;
+  font-weight: bold;
+}
+.first-content #infoBox #entry #entry-basics #entry-details #entry-project-homepage a {
+  color: #b026ff;
+  font-weight: bold;
+}
+
+/* .first-content #infoBox #entry img {
+  background-color: black;  
+  border: 2px solid rgb(0, 255, 76);
+  border-radius: 5px;
+  height: 100%; 
+  width: 100px; 
+  max-width: 100px; 
+  max-height: 100px;
+  word-wrap: break-word;
 }
 .first-content #infoBox #entry #entry-image {
   float: left;
-  padding: 10px;
+  padding: 0px 5px 0px 0px;
   width: 100px;
   height: 100px;
 }
@@ -207,7 +246,7 @@ a:hover { color: #FF0; }
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* word-wrap: break-word; */
+  word-wrap: break-word;
 }
 .first-content #infoBox #entry #entry-link {
   font-family: 'Courier New', Courier, monospace;
@@ -216,7 +255,7 @@ a:hover { color: #FF0; }
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* word-wrap: break-word; */
+  word-wrap: break-word;
 }
 .first-content #infoBox #entry #entry-desc {
   font-family: 'Courier New', Courier, monospace;
@@ -225,15 +264,10 @@ a:hover { color: #FF0; }
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  /* word-wrap: break-word; */
-}
-.first-content #infoBox #entry img {
-  height: 100%; 
-  width: 100%; 
-  max-width: 100px; 
-  max-height: 100px;
-  /* word-wrap: break-word; */
-}
+  word-wrap: break-word;
+} */
+
+
 
 
 .parallax-content {
@@ -615,6 +649,10 @@ footer em {
 
   #nftSearch {
     padding: 20px;
+  }
+
+  .first-content #infoBox #entry {
+    padding-top: 25px;
   }
 
   .service-content {

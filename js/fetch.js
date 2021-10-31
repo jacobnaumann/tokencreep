@@ -13,41 +13,33 @@ async function fetchinfo()
         fetch('https://api.opensea.io/api/v1/assets?owner=' + addy + '&order_direction=desc&offset=0&limit=20', options)
             .then(response => response.json())
             .then(data => {
-                // console.log(data.assets);
+                console.log(data.assets);
                 const html = data.assets.map(item => {
                     return `
-                        <div id="entry">
+                    <div id="entry">
+                        <div id="entry-basics">
                             <span id="entry-image">
-                            <a href='${item.permalink}' target='_blank'><img src='${item.image_url}'></a>
+                                <a href='${item.permalink}' target='_blank'><img src='${item.image_url}'></a>
                             </span>
-                            <span id="entry-name">
-                                Name: ${item.name}
+                            <span id="entry-details">
+                                <div id="entry-name">
+                                    <a href='${item.permalink}' target='_blank'>${item.name}</a>
+                                </div>
+                                <div id="entry-collection-name">
+                                    Collection: ${item.collection.name}
+                                </div>
+                                <div id="entry-project-homepage">
+                                    Project Home: <a href='${item.permalink}' target='_blank'>${item.collection.external_url}</a>
+                                </div>
                             </span>
-                            <div id="entry-link">
-                                Link: <a href='${item.permalink}' target='_blank'>${item.permalink}</a>
-                            </div>
-                            <div id="entry-desc">
-                                Description: ${item.description}
-                            </div>
-                        </div>`
+                        </div>
+                    </div>
+                    `
                 })
                 .join("");
-                // console.log(html);
-                // let ids = [];
-                // let image_url = [];
-                // let description = [];
-            
-                // for(let i = 0; i < response.assets.length; i++){
-                    document
-                        .querySelector("#infoBox")
-                        .insertAdjacentHTML("afterbegin", html);
-                    // ids.push(response.assets[i].id);
-                    // image_url.push(response.assets[i].image_url);
-                    // description.push(response.assets[i].description);
-                // }
- 
-                // console.log(response.assets[0].id);
-                // console.log(response.assets[4].description);
+                document
+                    .querySelector("#infoBox")
+                    .insertAdjacentHTML("afterbegin", html);
             })
             .catch(err => console.error(err));
     }
